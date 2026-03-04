@@ -1,3 +1,12 @@
+
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+
+window.addEventListener('load', () => {
+  window.scrollTo(0, 0);
+});
+
 // navbar Scroll
 window.addEventListener('scroll', function(){
     let navbar = document.querySelector('.navbar');
