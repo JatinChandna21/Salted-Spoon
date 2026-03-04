@@ -1,10 +1,14 @@
+// Make sure page always starts at top
+window.addEventListener("load", () => {
+  if (window.location.hash) {
+    // remove the hash immediately
+    history.replaceState(null, "", window.location.pathname);
+  }
 
-if ('scrollRestoration' in history) {
-  history.scrollRestoration = 'manual';
-}
-
-window.addEventListener('load', () => {
-  window.scrollTo(0, 0);
+  // give browser a tick, then scroll to top
+  setTimeout(() => {
+    window.scrollTo({ top: 0 });
+  }, 0);
 });
 
 // navbar Scroll
